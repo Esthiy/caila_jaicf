@@ -45,12 +45,17 @@ object MainScenario : Scenario() {
             activators {
                 anyIntent()
             }
-
             action {
-                activator.caila?.topIntent?.answer?.let {
-                    reactions.say(it)
-                }
+                reactions.sayRandom(
+                    "Small talk"
+                )
+                reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
             }
+            // action {
+            //     activator.caila?.topIntent?.answer?.let {
+            //         reactions.say(it)
+            //     }
+            // }
         }
 
         fallback {
